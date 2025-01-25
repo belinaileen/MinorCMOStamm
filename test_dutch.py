@@ -4,6 +4,12 @@ import matplotlib.pyplot as plt
 import json
 import pydeck as pdk
 
+# mission years and columns
+# Satisfaction with Social life
+# Registered Problematic Debt
+# Population with Starting Qualification
+# Emissions particulate matter
+
 # Define the file options and their year-to-fieldname mappings
 file_options = {
     "Mediaan besteedbaar inkomen": {
@@ -18,11 +24,11 @@ file_options = {
             "2020": "F_017_Mean",
             "2021": "F_018_Mean",
         },
-        "path": 'Indicator_01_KL_H_36.geojson',
+        "path": 'MedianDisposableIncome.geojson',
         "title": "Mediaan besteedbaar inkomen",
     },
     "Tevredenheid met het leven": {
-        "path": r"Indicator_01_KL_H_01.geojson",
+        "path": r"SatisfactionLife.geojson",
         "year_columns": {
             "2013": "F_01K_Mean",
             "2014": "F_011_Mean",
@@ -38,7 +44,7 @@ file_options = {
         "title": "Tevredenheid met het leven",
     },
     "Tevredenheid met vrije tijd": {
-        "path": r"Indicator_01_KL_PK_07.geojson",
+        "path": r"SatisfactionFreeTime.geojson",
         "year_columns": {
             "2013": "F_01K_Mean",
             "2014": "F_011_Mean",
@@ -53,22 +59,8 @@ file_options = {
         },
         "title": "Tevredenheid met vrije tijd",
     },  
-    "Bruto binnenlands product": {
-        "year_columns": {
-            "2015": "F_09EV015",
-            "2016": "F_09EV016",
-            "2017": "F_09EV017",
-            "2018": "F_09EV018",
-            "2019": "F_09EV019",
-            "2020": "F_09EV020",
-            "2021": "F_09EV021",
-            "2022": "F_09EV022",
-        },
-        "path": r"Indicator_09_E_V_03.geojson",
-        "title": "Bruto binnenlands product",
-    },
     "Overgewicht": {
-        "path": r"Indicator_01_GZ_08.geojson",
+        "path": r"Overweight.geojson",
         "year_columns": {
             "2016": "F_01G_Mean",
             "2020": "F_011_Mean",
@@ -77,7 +69,7 @@ file_options = {
         "title": "Overgewicht",
     },
     "Ervaren gezondheid": {
-        "path": r"Indicator_01_KL_PK_01.geojson",
+        "path": r"ExperiencedHealth.geojson",
         "year_columns": {
             "2016": "F_01K_Mean",
             "2020": "F_011_Mean",
@@ -86,14 +78,14 @@ file_options = {
         "title": "Ervaren gezondheid",
     },
     "Levensverwachting bevolking": {
-        "path": r"Indicator_01_GZ_20.geojson",
+        "path": r"LifeExpectancyOfThePopulation.geojson",
         "year_columns": {
             "2021": "F_01G_Mean",
         },
         "title": "Levensverwachting bevolking",
     },
     "Personen met één of meer langdurige ziekten of aandoeningen": {
-        "path": r"Indicator_R_GZ_03.geojson",
+        "path": r"PeopleWithIllness.geojson",
         "year_columns": {
             "2016": "F_RGZ_Mean",
             "2020": "F_RG1_Mean",
@@ -102,7 +94,7 @@ file_options = {
         "title": "Personen met één of meer langdurige ziekten of aandoeningen",
     },
     "Nettoarbeidsparticipatie": {
-        "path": r"Indicator_09_E_V_12.geojson",
+        "path": r"NetLaborParticipation.geojson",
         "year_columns": {
             "2014": "mean14",
             "2015": "mean15",
@@ -117,21 +109,6 @@ file_options = {
         },
         "title": "Nettoarbeidsparticipatie",
     },
-    "Brutoarbeidsparticipatie": {
-        "path": r"Indicator_R_HN_AV_01.geojson",
-        "year_columns": {
-            "2014": "mean14",
-            "2015": "mean15",
-            "2016": "mean16",
-            "2017": "mean17",
-            "2018": "mean18",
-            "2019": "mean19",
-            "2020": "mean20",
-            "2021": "mean21",
-            "2022": "mean22",
-        },
-        "title": "Brutoarbeidsparticipatie",
-    },
     "Werkloosheid": {
         "year_columns": {
             "2014": "mean14",
@@ -144,11 +121,12 @@ file_options = {
             "2021": "mean21",
             "2022": "mean22",
         },
-        "path": r"Indicator_09_E_V_13.geojson",
+        "path": r"Unemployment.geojson",
         "title": "Werkloosheid",
     },
+    # Distance to public transport - move to GitHub
     "Afstand tot ov": {
-        "path": r"Indicator_R_HN_AV_02.geojson",
+        "path": r"DistanceToPublicTransportation.geojson",
         "year_columns": {
             "2017": "spill17",
             "2018": "spill18",
@@ -160,7 +138,7 @@ file_options = {
         "title": "Afstand tot ov",
     },
     "Tevredenheid met woonomgeving": {
-        "path": r"Indicator_03_PVI_04.geojson",
+        "path": r"SatisfactionLivingEnvironment.geojson",
         "year_columns": {
             "2015": "F_03P_Mean",
             "2018": "F_031_Mean",
@@ -174,19 +152,20 @@ file_options = {
             "2018": "F_011_Mean",
             "2021": "F_012_Mean",
         },
-        "path": r"Indicator_01_KL_PK_03.geojson",
+        "path": r"SatisfactionHousing.geojson",
         "title": "Tevredenheid met woning",
     },
     "Afstand tot sportterrein": {
-        "path": r"Indicator_R_HN_SL_02.geojson",
+        "path": r"DistanceToSportsField.geojson",
         "year_columns": {
             "2015": "spill15",
             "2017": "spill17",
         },
         "title": "Afstand tot sportterrein",
     },
+    # Distance to Primary school - move to GitHub
     "Afstand tot basisschool": {
-        "path": r"Indicator_R_HN_SL_03.geojson",
+        "path": r"DistanceToPrimarySchool.geojson",
         "year_columns": {
             "2013": "spill13",
             "2014": "spill14",
@@ -201,8 +180,9 @@ file_options = {
         },
         "title": "Afstand tot basisschool",
     },
+    # Distance to cafe - move to GitHub
     "Afstand tot café e.d.": {
-        "path": r"Indicator_R_HN_SL_04.geojson",
+        "path": r"DistanceToCafe.geojson",
         "year_columns": {
             "2013": "spill13",
             "2014": "spill14",
@@ -217,8 +197,9 @@ file_options = {
         },
         "title": "Afstand tot café e.d.",
     },
+    # Contact with family, friends or neighbors - move to GitHub
     "Contact met familie, vrienden of buren": {
-        "path": r"Indicator_01_KL_OK_08.geojson",
+        "path": r"ContactWithFamilyEtc.geojson",
         "year_columns": {
             "2013": "F_01K_Mean",
              "2014": "F_011_Mean",
@@ -234,7 +215,7 @@ file_options = {
         "title": "Contact met familie, vrienden of buren",
     },
     "Vertrouwen in instituties": {
-        "path": r"Indicator_01_KL_OK_11.geojson",
+        "path": r"TrustInstitutions.geojson",
         "year_columns": {
             "2013": "mean13",
             "2014": "mean14",
@@ -250,7 +231,7 @@ file_options = {
         "title": "Vertrouwen in instituties",
     },
     "Vertrouwen in anderen": {
-        "path": r"Indicator_02_HB_SK_01.geojson",
+        "path": r"TrustOthers.geojson",
         "year_columns": {
             "2013": "mean13",
             "2014": "mean14",
@@ -278,12 +259,12 @@ file_options = {
             "2021": "F_01K_Me_1",
             "2022": "F_01K_Me_2",
         },
-        "path": r"Indicator_01_KL_OK_10.geojson",
+        "path": r"VolunteerWork.geojson",
         "title": "Vrijwilligerswerk",
     },
     # often feeling unsafe in neighborhood
     "Vaak onveilig gevoel in de buurt": {
-        "path": r"Indicator_01_KL_OK_39.geojson",
+        "path": r"OftenFeelingUnsafe.geojson",
         "year_columns": {
             "2013": "F_01K_Mean",
             "2014": "F_01K_Me_1",
@@ -296,7 +277,7 @@ file_options = {
         "title": "Vaak onveilig gevoel in de buurt",
     },
     "Aantal ondervonden delicten": {
-        "path": r"Indicator_R_HN_V_01.geojsonn",
+        "path": r"NumberCrimes.geojsonn",
         "year_columns": {
             "2013": "F_RHN_Mean",
             "2014": "F_RH1_Mean",
@@ -321,19 +302,20 @@ file_options = {
             "2021": "F_046_Me_1",
             "2022": "F_047_Me_1",
         },
-        "path": r"Indicator_04_VE_03.geojson",
+        "path": r"RecordedCrimes.geojson",
         "title": "Geregistreerde misdrijven",
     },
     "Natuurgebied per inwoner": {
-        "path": r"Indicator_R_HN_MIL_02.geojson",
+        "path": r"NatureAreaPerInhabitant.geojson",
         "year_columns": {
             "2015": "Mean_15",
             "2017": "Mean_17",
         },
         "title": "Natuurgebied per inwoner",
     },
+    # Distance to public green areas - move to GitHub
     "Afstand tot openbaar groen": {
-        "path": r"Indicator_R_HN_MIL_01.geojson",
+        "path": r"DistanceToPublicGreenAreas.geojson",
         "year_columns": {
             "2015": "spill15",
             "2017": "spill17",
@@ -341,7 +323,7 @@ file_options = {
         "title": "Afstand tot openbaar groen",
     },
     "Natuur- en bosgebieden": {
-        "path": r"Indicator_01_KL_OK_14.geojson",
+        "path": r"NatureForestAreas.geojson",
         "year_columns": {
             "2015": "spill15",
             "2017": "spill17",
@@ -349,7 +331,7 @@ file_options = {
         "title": "Natuur- en bosgebieden",
     },
     "Broeikasgasemissies per inwoner": {
-        "path": r"Indicator_07_K_E_03.geojson",
+        "path": r"GreenhouseEmissions.geojson",
         "year_columns": {
             "2015": "F_07KE015",
             "2016": "F_07KE016",
@@ -362,7 +344,7 @@ file_options = {
         "title": "Broeikasgasemissies per inwoner",
     },
     "Kwaliteit van zwemwater binnenwateren": {
-        "path": r"Indicator_02_HB_NK_30.geojson",
+        "path": r"QualityOfInlandBathingWater.geojson",
         "year_columns": {
             "2013": "mean13",
             "2014": "mean14_1",
@@ -378,7 +360,7 @@ file_options = {
         "title": "Kwaliteit van zwemwater binnenwateren",
     },
     "Kwaliteit van zwemwater kustwateren": {
-        "path": r"Indicator_02_HB_NK_31.geojson",
+        "path": r"QualityOfBathingWaterCoastalWaters.geojson",
         "year_columns": {
             "2013": "mean13",
             "2014": "mean14",
@@ -393,6 +375,7 @@ file_options = {
         },
         "title": "Kwaliteit van zwemwater kustwateren",
     },
+    # Average debt per household 
     "Gemiddelde schuld per huishouden": {
         "year_columns": {
             "2013": "F_18F_Me_1",
@@ -406,11 +389,11 @@ file_options = {
             "2021": "F_188_Me_1",
             "2022": "F_189_Me_1",
         },
-        "path": r"Indicator_18_FIN_32.geojson",
+        "path": r"AverageDebt.geojson", # check again
         "title": "Gemiddelde schuld per huishouden",
     },
     "Mediaan vermogen van huishoudens": {
-        "path": r"Indicator_01_07_NW.geojson",
+        "path": r"MedianHouseholdWealth.geojson",
         "year_columns": {
             "2013": "F_010_Mean",
             "2014": "F_011_Mean",
@@ -424,8 +407,9 @@ file_options = {
         },
         "title": "Mediaan vermogen van huishoudens",
     },
+    # Private solar energy
     "Particuliere zonne-energie": {
-        "path": r"Indicator_R_L_NK_04.geojson",
+        "path": r"SolarEnergy.geojson", # check again
         "year_columns": {
         "2013": "mean13",
         "2014": "mean14_1",
@@ -440,27 +424,18 @@ file_options = {
         },
         "title": "Particuliere zonne-energie",
     },
-    "Bebouwd terrein": {
+    # Built Up area
+    "Bebouwd terrein": { 
         "year_columns": {
         "2015": "F_RLN_Mean",
         "2017": "F_RL1_Mean",
         },
-        "path": r"Indicator_R_L_NK_03.geojson",
+        "path": r"BuiltUpArea.geojson",
         "title": "Bebouwd terrein",
     },
-    "Groen-blauwe ruimte, exclusief reguliere landbouw": {
-        "path": r"Indicator_15_15_NW.geojson",
-        "year_columns": {
-            "2013": "mean13",
-            "2015": "mean15",
-            "2018": "mean18",
-            "2020": "mean20",
-            "2021": "mean21",
-        },
-        "title": "Groen-blauwe ruimte, exclusief reguliere landbouw",
-    },
-    "Hoogopgeleide bevolking": {
-        "path": r"Indicator_05_OPL_08.geojson",
+    # Population with a starting qualification 
+    "Bevolking met een startkwalificatie": {
+        "path": r"PopulationWithStartingQualification.geojson",
         "year_columns": {
             "2013": "mean13",
             "2014": "mean14",
@@ -473,10 +448,10 @@ file_options = {
             "2021": "mean21",
             "2022": "mean22",
         },
-        "title": "Hoogopgeleide bevolking",
+        "title": "Bevolking met een startkwalificatie",
     },
     "Sociale cohesie": {
-        "path": r"Indicator_R_L_SK_01.geojson",
+        "path": r"SocialCohesion.geojson",
         "year_columns": {
             "2013": "F_RLS_Me_1",
             "2014": "F_RLS_Me_2",
@@ -488,6 +463,55 @@ file_options = {
         },
         "title": "Sociale cohesie",
     },
+    "Geregisteerde problematische schulden": {
+        "path": r"RegisteredProblematicDebt.geojson",
+        "year_columns": {
+            "2013": "Year2013",
+            "2014": "Year2014",
+            "2015": "Year2015",
+            "2016": "Year2016",
+            "2017": "Year2017",
+            "2018": "Year2018",
+            "2019": "Year2019",
+            "2020": "Year2020",
+            "2021": "Year2021",
+            "2022": "Year2022",
+        },
+        "title": "Geregisteerde problematische schulden",
+    },
+    "Tevredenheid met sociaal leven": {
+        "path": r"SatisfactionWithSocialLife.geojson",
+        "year_columns": {
+            "2013": "Year2013",
+            "2014": "Year2014",
+            "2015": "Year2015",
+            "2016": "Year2016",
+            "2017": "Year2017",
+            "2018": "Year2018",
+            "2019": "Year2019",
+            "2020": "Year2020",
+            "2021": "Year2021",
+            "2022": "Year2022",
+        },
+        "title": "Tevredenheid met sociaal leven",
+    },
+    "Emissions Particulate Matter": {
+        "path": r"EmissionsParticulateMatter.geojson",
+        "year_columns": {
+            "2015": "Year2015",
+            "2019": "Year2019",
+            "2020": "Year2020",
+            "2021": "Year2021",
+            "2022": "Year2022",
+        },
+        "title": "Emissions Particulate Matter",
+    },
+
+# Indicator 01.10_NW has been added. Registered problematic debt /
+# Geregisteerde problematische schulden
+# Indicator 10.31_NW has been added. Satisfaction with social life / 
+# Tevredenheid met sociaal leven
+
     # 40 in total above - in shp folder there is 48 in total including thematic
     # Thematic
     "Luchtkwaliteit": {
@@ -590,6 +614,20 @@ file_options = {
         },
         "title": "Thema Natuurlijk kapitaal",
     },
+    "Samenleving": {
+        "path": r"ThemeSociety.geojson",
+        "year_columns": {
+            "2013": "Year2013",
+            "2014": "Year2014",
+            "2015": "Year2015",
+            "2016": "Year2016",
+            "2017": "Year2017",
+            "2018": "Year2018",
+            "2019": "Year2019",
+            "2020": "Year2020",
+            "2021": "Year2021",
+            "2022": "Year2022",
+        },
+        "title": "Thema Samenleving",
+    },
 }
-
-
