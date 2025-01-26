@@ -101,7 +101,7 @@ if page == "home":
 
     with col0[0]:
         #Extract path, year_columns, and title based on selection
-        indicator_path = file_options[selected_indicator["path"]]
+        indicator_path = file_options[selected_indicator]["path"]
         title_base = file_info["title"]
 
         # Load the selected file
