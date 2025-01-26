@@ -262,7 +262,7 @@ st.pyplot(fig)  # Use Streamlit's st.pyplot to render matplotlib plots
 
 st.markdown("""
     <div style='text-align: left; padding: 10px; display: flex; align-items: center;'>
-        <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>For the Dutch page:</h1>
+        <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>Voor de Engelse pagina:</h1>
         <a href="https://broad-prosperity-dashboard.streamlit.app" target="_blank" style="
             text-decoration: none;
             background-color: #e5007d;
@@ -278,7 +278,7 @@ st.markdown("""
 
 st.markdown("""
     <div style='text-align: left; padding: 10px; display: flex; align-items: center;'>
-        <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>For the download page:</h1>
+        <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>Voor de downloadpagina:</h1>
         <a href="https://streamlit.io/gallery" target="_blank" style="
             text-decoration: none;
             background-color: #e5007d;
