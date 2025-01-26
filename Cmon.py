@@ -8,7 +8,6 @@ import geopandas as gpd
 import os
 import matplotlib.pyplot as plt
 from dutchdict import Themes
-import test
 from test_dutch import file_options 
 import folium
 from folium.plugins import HeatMap
