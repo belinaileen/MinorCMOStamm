@@ -176,8 +176,8 @@ with col0[1]:
             - Data: [CBS data: Nederland (https://www.cbs.nl/nl-nl/visualisaties/regionale-monitor-brede-welvaart/indicator)]''')
 
 st.markdown(""" <div style='text-align: left; padding: 10px; display: flex; align-items: center;'>
-    <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>For the download page:</h1>
-    <a href="https://cmostamm.streamlit.app/" target="_blank" style="
+    <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>Terug naar de Nederlandse pagina:</h1>
+    <a href="https://cmostammdutch.streamlit.app/" target="_blank" style="
     text-decoration: none;
     background-color: #e5007d;
     color: white;
