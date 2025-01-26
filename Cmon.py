@@ -5,7 +5,6 @@ import pandas as pd
 import altair as alt
 import pydeck as pdk  # For map visualization
 import geopandas as gpd
-from streamlit_folium import st_folium
 import os
 import matplotlib.pyplot as plt
 from dutchdict import Themes
