@@ -5,15 +5,15 @@ import pandas as pd
 import altair as alt
 import pydeck as pdk  # For map visualization
 import geopandas as gpd
-import os
 import matplotlib.pyplot as plt
 from dutchdict import Themes
+import test
 from test_dutch import file_options 
 import folium
 from folium.plugins import HeatMap
 from streamlit.components.v1 import iframe
 import json
-import mapdownload
+import plotly.express as px
 
 # Page configuration
 st.set_page_config(
@@ -79,7 +79,7 @@ with st.sidebar:
     if type == "Themes":
         options = df_thema["Thema"].dropna().unique().tolist()
     else:
-        options = file_options
+        options = test.file_options
 
 
     selected_indicator = st.selectbox("Select a Theme/an Indicator:", options)
@@ -103,7 +103,7 @@ with col0[0]:
     indicator = gpd.read_file(indicator_path)
 
     # Get the column corresponding to the selected year
-    selected_column = year_columns[selected_year]
+    selected_column = year_columns[slected_year]
 
     # **2. Interactive pydeck Map**
     # Ensure geometry is valid
@@ -262,7 +262,7 @@ st.pyplot(fig)  # Use Streamlit's st.pyplot to render matplotlib plots
 
 st.markdown("""
     <div style='text-align: left; padding: 10px; display: flex; align-items: center;'>
-        <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>Voor de Engelse pagina:</h1>
+        <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>For the Dutch page:</h1>
         <a href="https://broad-prosperity-dashboard.streamlit.app" target="_blank" style="
             text-decoration: none;
             background-color: #e5007d;
@@ -278,7 +278,7 @@ st.markdown("""
 
 st.markdown("""
     <div style='text-align: left; padding: 10px; display: flex; align-items: center;'>
-        <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>Voor de downloadpagina:</h1>
+        <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>For the download page:</h1>
         <a href="https://streamlit.io/gallery" target="_blank" style="
             text-decoration: none;
             background-color: #e5007d;
