@@ -7,7 +7,6 @@ import pydeck as pdk  # For map visualization
 import geopandas as gpd
 import matplotlib.pyplot as plt
 from dutchdict import Themes
-import test
 from test_dutch import file_options 
 import folium
 from folium.plugins import HeatMap
