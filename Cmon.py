@@ -101,7 +101,7 @@ with col0[0]:
     indicator = gpd.read_file(indicator_path)
 
     # Get the column corresponding to the selected year
-    selected_column = year_columns[slected_year]
+    selected_column = year_columns[selected_year]
 
     # **2. Interactive pydeck Map**
     # Ensure geometry is valid
