@@ -193,7 +193,7 @@ with col0[1]:
     ''')
 
     if selected_indicator:
-        st.markdown('**Welkom bij{selected_indicator}**')
+        st.markdown(Themes[selected_indicator])
 
     st.expander('About', expanded=True)
     # Filter rows based on label and year
