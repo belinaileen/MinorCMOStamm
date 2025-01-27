@@ -12,7 +12,6 @@ import folium
 from folium.plugins import HeatMap
 from streamlit.components.v1 import iframe
 import json
-import plotly.express as px
 
 # Page configuration
 st.set_page_config(
