@@ -277,7 +277,7 @@ file_options = {
         "title": "Vaak onveilig gevoel in de buurt",
     },
     "Aantal ondervonden delicten": {
-        "path": r"NumberCrimes.geojsonn",
+        "path": r"Update_Number_crimes_encountered.geojson",
         "year_columns": {
             "2013": "F_RHN_Mean",
             "2014": "F_RH1_Mean",
@@ -302,11 +302,11 @@ file_options = {
             "2021": "F_046_Me_1",
             "2022": "F_047_Me_1",
         },
-        "path": r"RecordedCrimes.geojson",
+        "path": r"Update_Recorded_crimes.geojson",
         "title": "Geregistreerde misdrijven",
     },
     "Natuurgebied per inwoner": {
-        "path": r"NatureAreaPerInhabitant.geojson",
+        "path": r"Update_Nature_area_per_inhabitant.geojson",
         "year_columns": {
             "2015": "Mean_15",
             "2017": "Mean_17",
@@ -331,7 +331,7 @@ file_options = {
         "title": "Natuur- en bosgebieden",
     },
     "Broeikasgasemissies per inwoner": {
-        "path": r"GreenhouseEmissions.geojson",
+        "path": r"Update_Greenhouse_gas_emissions.geojson",
         "year_columns": {
             "2015": "F_07KE015",
             "2016": "F_07KE016",
@@ -409,7 +409,7 @@ file_options = {
     },
     # Private solar energy
     "Particuliere zonne-energie": {
-        "path": r"SolarEnergy.geojson", # check again
+        "path": r"Update_Solar_Energy.geojson", # check again
         "year_columns": {
         "2013": "mean13",
         "2014": "mean14_1",
@@ -496,7 +496,7 @@ file_options = {
         "title": "Tevredenheid met sociaal leven",
     },
     "Emissions Particulate Matter": {
-        "path": r"EmissionsParticulateMatter.geojson",
+        "path": r"Update_Emissions_particulate_matter.geojson",
         "year_columns": {
             "2015": "Year2015",
             "2019": "Year2019",
@@ -515,7 +515,7 @@ file_options = {
     # 40 in total above - in shp folder there is 48 in total including thematic
     # Thematic
     "Luchtkwaliteit": {
-        "path": r"ThemeAirQuality.geojson",
+        "path": r"Update_Theme_Air_quality.geojson",
         "year_columns": {
             "2019": "Year2019",
             "2020": "Year2020",
@@ -565,7 +565,7 @@ file_options = {
         "title": "Thema Afstand tot woonvoorzieningen",
     },
     "Milieu": {
-        "path": r"ThemeEnvironment.geojson",
+        "path": r"Update_Theme_Environment.geojson",
         "year_columns": {
             "2015": "Year2015",
             "2017": "Year2017",
@@ -600,14 +600,14 @@ file_options = {
         "title": "Thema Arbeid en Vrije Tijd",
     },
     "Natuurlijk kapitaal": {
-        "path": r"ThemeNaturalcapital.geojson",
+        "path": r"Update_Theme_Natural_capital.geojson",
         "year_columns": {
             "2015": "Year2015",
         },
         "title": "Thema Natuurlijk kapitaal",
     },
     "Natuur": {
-        "path": r"ThemeNature.geojson",
+        "path": r"Update_Theme_Nature.geojson",
         "year_columns": {
             "2015": "Year2015",
             "2017": "Year2017",
