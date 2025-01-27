@@ -95,14 +95,14 @@ col0 = st.columns((5, 3), gap='medium')
 with col0[0]:
     #Extract path, year_columns, and title based on selection
     indicator_path = file_options[selected_indicator]["path"]
-    title_base = file_info["title"]
+    title_base = file_options[selected_indicator]["title"]
 
     # Load the selected file
     indicator = gpd.read_file(indicator_path)
 
     # Get the column corresponding to the selected year
     selected_column = year_columns[selected_year]
-
+    
     # **2. Interactive pydeck Map**
     # Ensure geometry is valid
     indicator = indicator[indicator.geometry.notnull()]
