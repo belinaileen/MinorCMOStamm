@@ -87,6 +87,39 @@ with st.sidebar:
     year_columns = file_options[selected_indicator]["year_columns"]
     selected_year = st.selectbox("Selecteer een jaar:", list(year_columns.keys()))
 
+    st.markdown("""
+    <div style='text-align: left; padding: 10px; display: flex; align-items: center;'>
+        <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>Voor de Engelse pagina:</h1>
+        <a href="https://broad-prosperity-dashboard.streamlit.app" target="_blank" style="
+            text-decoration: none;
+            background-color: #e5007d;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: -5px;
+        ">Click here</a>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+        <div style='text-align: left; padding: 10px; display: flex; align-items: center;'>
+            <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>Voor de downloadkaartpagina:</h1>
+            <a href="mapdownload.streamlit.app" target="_blank" style="
+                text-decoration: none;
+                background-color: #e5007d;
+                color: white;
+                padding: 6px 12px;
+                border-radius: 5px;
+                font-size: 14px;
+                font-weight: bold;
+                margin-left: -5px;
+            ">Click here</a>
+        </div>
+        """, unsafe_allow_html=True)
+        
+
 #######################
 # Dashboard Main Panel
 col0 = st.columns((5, 3), gap='medium')
@@ -170,42 +203,6 @@ with col0[0]:
     # Display the map with Streamlit
     st.pydeck_chart(r)
 
-    col1, col2 = st.columns([1, 1])
-    
-    with col1:
-        st.markdown("""
-        <div style='text-align: left; padding: 10px; display: flex; align-items: center;'>
-            <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>Voor de Engelse pagina:</h1>
-            <a href="https://broad-prosperity-dashboard.streamlit.app" target="_blank" style="
-                text-decoration: none;
-                background-color: #e5007d;
-                color: white;
-                padding: 6px 12px;
-                border-radius: 5px;
-                font-size: 14px;
-                font-weight: bold;
-                margin-left: -5px;
-            ">Click here</a>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    with col2:
-        st.markdown("""
-            <div style='text-align: left; padding: 10px; display: flex; align-items: center;'>
-                <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>Voor de downloadkaartpagina:</h1>
-                <a href="mapdownload.streamlit.app" target="_blank" style="
-                    text-decoration: none;
-                    background-color: #e5007d;
-                    color: white;
-                    padding: 6px 12px;
-                    border-radius: 5px;
-                    font-size: 14px;
-                    font-weight: bold;
-                    margin-left: -5px;
-                ">Click here</a>
-            </div>
-            """, unsafe_allow_html=True)
-        
 with col0[1]:
 
     st.markdown(f'**Wat is Brede Welvaart ?**')
