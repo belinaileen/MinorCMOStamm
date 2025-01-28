@@ -126,15 +126,15 @@ with col0[0]:
     # Function to assign colors based on quantile
     def get_color(value):
         if pd.isna(value):
-            return [255, 0, 0]  # Red for missing values
+            return selected_scheme[0]#for missing values
         elif value <= quantiles[1]:  # 0-25% quantile range
-            return [228, 239, 209]  
+            return selected_scheme[1] 
         elif value <= quantiles[2]:  # 25-50% quantile range
-            return [152, 197, 194]  
+            return selected_scheme[2] 
         elif value <= quantiles[3]:  # 50-75% quantile range
-            return [73, 127, 153]  
+            return selected_scheme[3]
         else:  # 75-100% quantile range
-            return [44, 86, 124]  
+            return selected_scheme[4]
     # Apply the color function to each feature
     indicator["fill_color"] = indicator[selected_column].apply(get_color)
 
