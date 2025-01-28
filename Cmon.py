@@ -227,7 +227,7 @@ with col0[1]:
             ),
         }
     )
-    with st.expander('About', expanded=True):
+    with st.expander('Ongeveer', expanded=True):
         st.write('''
             - Data: [CBS data: Nederland (https://www.cbs.nl/nl-nl/visualisaties/regionale-monitor-brede-welvaart/indicator)]''')
 
