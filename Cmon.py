@@ -1,17 +1,16 @@
-from cProfile import label
-import numpy as np
-import streamlit as st
-import pandas as pd
-import altair as alt
-import pydeck as pdk  # For map visualization
+from cProfile import label # For performance profiling
+import numpy as np # For numerical operations and data manipulation
+import pandas as pd # For numerical operations and data manipulation
+import streamlit as st # build interactive dashboard
+import pydeck as pdk  # To create interactive map visualizations
 import geopandas as gpd
-import matplotlib.pyplot as plt
-from dutchdict import Themes
-from test_dutch import file_options 
-import folium
+import matplotlib.pyplot as plt # For plotting charts 
+from dutchdict import Themes # A custom dictionary providing thematic descriptions
+from test_dutch import file_options # A dictionary for mapping themes/indicators to file paths, titles, and year columns
+import folium # For creating interactive Leaflet-based maps
 from folium.plugins import HeatMap
 from streamlit.components.v1 import iframe
-import json
+import json # For processing geoJSON data
 
 # Page configuration
 st.set_page_config(
@@ -19,6 +18,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded")
 
+# Styling dashboard
 st.markdown("""
     <div style='text-align: left; padding: 10px;'>
         <h1 style='color: #eb1d9c; font-size: 48px; font-weight: bold; margin-bottom: 0;'> cmo stamm.</h1>
@@ -26,8 +26,6 @@ st.markdown("""
     </div>
     """, unsafe_allow_html=True)
 
-    #######################
-    # CSS styling
 st.markdown("""
     <style>
     /* Customize sidebar */
@@ -57,8 +55,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 #######################
-# Load data
-#df_meta = pd.read_csv('meta.csv')
+# Loading datasets
 df_indicators = pd.read_csv('indmaarmunn.csv')
 df_thema = pd.read_excel('thematicpath.xlsx')
 
@@ -66,7 +63,8 @@ df_thema = pd.read_excel('thematicpath.xlsx')
 # Sidebar
 with st.sidebar:
     st.title('Indicatoren van brede welvaart')
-    # Check if df_indicators is a DataFrame and contains 'label'
+
+    # st.radio lets audience choose between visualising "Thema" or "Indicators" 
     type = st.radio("what would you like to visualise ?",
         ["Themes", "Indicators"],
         captions = [
@@ -74,11 +72,12 @@ with st.sidebar:
             "Indicators within the themes"
         ],)
 
+    # For "Themes," the options are derived from df_thema["Thema"]
+    # For "Indicators," the options are from file_options from the test_dutch.py file
     if type == "Themes":
         options = df_thema["Thema"].dropna().unique().tolist()
     else:
         options = file_options
-
 
     selected_indicator = st.selectbox("Select a Theme/an Indicator:", options)
 
@@ -87,38 +86,8 @@ with st.sidebar:
     year_columns = file_options[selected_indicator]["year_columns"]
     selected_year = st.selectbox("Selecteer een jaar:", list(year_columns.keys()))
 
-    st.markdown("""
-    <div style='text-align: left; padding: 10px; display: flex; align-items: center;'>
-        <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>Voor de Engelse pagina:</h1>
-        <a href="https://broad-prosperity-dashboard.streamlit.app" target="_blank" style="
-            text-decoration: none;
-            background-color: #e5007d;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 5px;
-            font-size: 14px;
-            font-weight: bold;
-            margin-left: -5px;
-        ">Click here</a>
-    </div>
-    """, unsafe_allow_html=True)
-
-    st.markdown("""
-        <div style='text-align: left; padding: 10px; display: flex; align-items: center;'>
-            <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>Voor de downloadkaartpagina:</h1>
-            <a href="mapdownload.streamlit.app" target="_blank" style="
-                text-decoration: none;
-                background-color: #e5007d;
-                color: white;
-                padding: 6px 12px;
-                border-radius: 5px;
-                font-size: 14px;
-                font-weight: bold;
-                margin-left: -5px;
-            ">Click here</a>
-        </div>
-        """, unsafe_allow_html=True)
-        
+    selected_scheme_name = st.selectbox("Select a color scheme:", list(color_schemes.keys()))
+    selected_scheme = color_schemes[selected_scheme_name]
 
 #######################
 # Dashboard Main Panel
@@ -203,6 +172,9 @@ with col0[0]:
     # Display the map with Streamlit
     st.pydeck_chart(r)
 
+    if selected_indicator:
+        st.markdown(Themes[selected_indicator])
+
 with col0[1]:
 
     st.markdown(f'**Wat is Brede Welvaart ?**')
@@ -219,9 +191,6 @@ with col0[1]:
     wij door bewustwording te vergroten, het monitoren en uitvoeren van onderzoek en het 
     ontwikkelen van een visie en strategie voor beleid.
     ''')
-
-    if selected_indicator:
-        st.markdown(Themes[selected_indicator])
 
     st.expander('About', expanded=True)
 
@@ -261,3 +230,35 @@ with col0[1]:
     with st.expander('Ongeveer', expanded=True):
         st.write('''
             - Data: [CBS data: Nederland (https://www.cbs.nl/nl-nl/visualisaties/regionale-monitor-brede-welvaart/indicator)]''')
+
+    st.markdown("""
+    <div style='text-align: left; padding: 10px; display: flex; align-items: center;'>
+        <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>Voor de Engelse pagina:</h1>
+        <a href="https://broad-prosperity-dashboard.streamlit.app" target="_blank" style="
+            text-decoration: none;
+            background-color: #e5007d;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: -5px;
+        ">Click here</a>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+        <div style='text-align: left; padding: 10px; display: flex; align-items: center;'>
+            <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>Voor de downloadkaartpagina:</h1>
+            <a href="mapdownload.streamlit.app" target="_blank" style="
+                text-decoration: none;
+                background-color: #e5007d;
+                color: white;
+                padding: 6px 12px;
+                border-radius: 5px;
+                font-size: 14px;
+                font-weight: bold;
+                margin-left: -5px;
+            ">Click here</a>
+        </div>
+        """, unsafe_allow_html=True)
