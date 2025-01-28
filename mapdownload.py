@@ -99,15 +99,18 @@ with col0[0]:
 
     # Check if the selected column exists in the data
     if selected_column in indicator.columns:
-        # **1. Static Plot using Matplotlib**
-        # Create a Matplotlib figure
         fig = plt.figure(figsize=[12, 8])
         ax = fig.add_axes([0, 0, 1, 1])
+
+        # Use a blue colormap
+        blue_colormap = 'Blues'
+
+        # Plot the data with the blue colormap
         indicator.plot(
             column=selected_column,
             ax=ax,
             legend=True,
-            cmap="blues",
+            cmap=blue_colormap,  # Specify the blue colormap
             legend_kwds={'orientation': 'vertical'}
         )
         plt.title(f"{title_base} van Nederland in {selected_year}")
