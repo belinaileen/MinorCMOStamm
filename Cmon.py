@@ -193,11 +193,13 @@ with col0[1]:
         st.markdown(Themes[selected_indicator])
 
     st.expander('About', expanded=True)
-    # Filter rows based on label and year
+
+    df_indicators['jaar'] = df_indicators['jaar'].astype(str)  # Convert to string
+    selected_year = str(selected_year)  # Convert selected year to string
+
     df_selectedindicator = df_indicators[
-        (df_indicators['label'] == selected_indicator) &  # Filter by label
-        (df_indicators['jaar'] == selected_year)
-    ]
+        (df_indicators['label'] == selected_indicator)&
+        (df_indicators['jaar'] == selected_year)]
 
     df_selectedindicator_sorted = df_selectedindicator.sort_values(by='waarde', ascending=True)
     
