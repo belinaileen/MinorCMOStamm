@@ -196,11 +196,13 @@ with col0[1]:
     # Filter rows based on label and year
     df_selectedindicator = df_indicators[
         (df_indicators['label'] == selected_indicator) &  # Filter by label
-        (df_indicators['jaar'] == df_indicators['jaar'].max())
+        (df_indicators['jaar'] == selected_year)
     ]
 
     df_selectedindicator_sorted = df_selectedindicator.sort_values(by='waarde', ascending=True)
-
+    
+    columns_to_include = ['statnaam', 'waarde'] 
+    
     df_selectedindicator_sorted = df_selectedindicator_sorted[columns_to_include]
 
     st.markdown(f'**Gemeenten gerangschikt van hoog naar laag in {selected_indicator}**')
