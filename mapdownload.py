@@ -107,7 +107,7 @@ with col0[0]:
             column=selected_column,
             ax=ax,
             legend=True,
-            cmap="blues"
+            cmap="blues",
             legend_kwds={'orientation': 'vertical'}
         )
         plt.title(f"{title_base} van Nederland in {selected_year}")
