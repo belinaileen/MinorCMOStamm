@@ -201,7 +201,7 @@ with col0[1]:
         (df_indicators['label'] == selected_indicator)&
         (df_indicators['jaar'] == selected_year)]
 
-    df_selectedindicator_sorted = df_selectedindicator.sort_values(by='waarde', ascending=True)
+    df_selectedindicator_sorted = df_selectedindicator.sort_values(by='waarde', descending=True)
     
     columns_to_include = ['statnaam', 'waarde'] 
     
