@@ -205,8 +205,7 @@ with col0[1]:
     columns_to_include = ['statnaam', 'waarde'] 
     
     df_selectedindicator_sorted = df_selectedindicator_sorted[columns_to_include]
-    with st.expander('Ongeveer', expanded=True):
-        st.markdown(f'**Gemeenten gerangschikt van hoog naar laag in {selected_indicator}**')
+    with st.expander(f'**Gemeenten gerangschikt van hoog naar laag in {selected_indicator}**'):
 
         if df_selectedindicator_sorted.empty:
                 st.warning("Geen gegevens beschikbaar voor de geselecteerde indicator.")
