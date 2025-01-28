@@ -83,9 +83,8 @@ with st.sidebar:
     selected_indicator = st.selectbox("Select a Theme/an Indicator:", options)
 
     jaar = df_indicators['jaar'].dropna().unique().tolist()
-    # Dropdown menu for selecting the year
-    file_info = file_options[selected_indicator]
-    year_columns = file_info["year_columns"]
+    
+    year_columns = file_options[selected_indicator]["year_columns"]
     selected_year = st.selectbox("Selecteer een jaar:", list(year_columns.keys()))
 
 #######################
@@ -227,37 +226,6 @@ with col0[1]:
     with st.expander('About', expanded=True):
         st.write('''
             - Data: [CBS data: Nederland (https://www.cbs.nl/nl-nl/visualisaties/regionale-monitor-brede-welvaart/indicator)]''')
-
-# Filter the DataFrame for 'statcode' values of 'GM0014' and 'GM0498'
-df_groningen = df_indicators[df_indicators['statcode'].isin(['GM0014'])]
-
-# Drop the unwanted columns
-columns_to_exclude = ['ondergrens_95procent_interval', 'bovengrens_95procent_interval', 'mutatie', 'dimensie']
-df_groningen = df_groningen.drop(columns=columns_to_exclude)
-
-df_selected_groningen = df_groningen[
-        (df_groningen['label'] == selected_indicator)
-    ]
-
-# Matplotlib plot section
-st.write("### Matplotlib Temporal Line Chart")
-fig, ax = plt.subplots(figsize=(10, 6))
-ax.plot(
-    df_selected_groningen["jaar"],
-    df_selected_groningen["waarde"],
-    marker="o",
-    linestyle="-",
-    color="b",
-    label="Value over Time",
-)
-ax.set_title("Temporal Line Chart", fontsize=16)
-ax.set_xlabel("jaar", fontsize=12)
-ax.set_ylabel("waarde", fontsize=12)
-ax.tick_params(axis="x", rotation=45)
-ax.grid(True)
-ax.legend()
-st.pyplot(fig)  # Use Streamlit's st.pyplot to render matplotlib plots
-
 st.markdown("""
     <div style='text-align: left; padding: 10px; display: flex; align-items: center;'>
         <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>For the Dutch page:</h1>
