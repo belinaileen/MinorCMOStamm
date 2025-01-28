@@ -201,7 +201,7 @@ with col0[1]:
 
     df_selectedindicator_sorted = df_selectedindicator.sort_values(by='waarde', ascending=True)
 
-    #df_selectedindicator_sorted = df_selectedindicator_sorted[columns_to_include]
+    df_selectedindicator_sorted = df_selectedindicator_sorted[columns_to_include]
 
     st.markdown(f'**Gemeenten gerangschikt van hoog naar laag in {selected_indicator}**')
 
