@@ -230,9 +230,13 @@ with col0[1]:
     with st.expander('About', expanded=True):
         st.write('''
             - Data: [CBS data: Nederland (https://www.cbs.nl/nl-nl/visualisaties/regionale-monitor-brede-welvaart/indicator)]''')
-st.markdown("""
+
+col1, col2 = st.columns([1, 1])
+
+with col1:
+    st.markdown("""
     <div style='text-align: left; padding: 10px; display: flex; align-items: center;'>
-        <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>For the Dutch page:</h1>
+        <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>Voor de Engelse pagina:</h1>
         <a href="https://broad-prosperity-dashboard.streamlit.app" target="_blank" style="
             text-decoration: none;
             background-color: #e5007d;
@@ -246,18 +250,19 @@ st.markdown("""
     </div>
     """, unsafe_allow_html=True)
 
-st.markdown("""
-    <div style='text-align: left; padding: 10px; display: flex; align-items: center;'>
-        <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>For the download page:</h1>
-        <a href="https://streamlit.io/gallery" target="_blank" style="
-            text-decoration: none;
-            background-color: #e5007d;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 5px;
-            font-size: 14px;
-            font-weight: bold;
-            margin-left: -5px;
-        ">Click here</a>
-    </div>
-    """, unsafe_allow_html=True)
+with col2:
+    st.markdown("""
+        <div style='text-align: left; padding: 10px; display: flex; align-items: center;'>
+            <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>Voor de downloadkaartpagina:</h1>
+            <a href="mapdownload.streamlit.app" target="_blank" style="
+                text-decoration: none;
+                background-color: #e5007d;
+                color: white;
+                padding: 6px 12px;
+                border-radius: 5px;
+                font-size: 14px;
+                font-weight: bold;
+                margin-left: -5px;
+            ">Click here</a>
+        </div>
+        """, unsafe_allow_html=True)
