@@ -61,11 +61,11 @@ df_thema = pd.read_excel('thematicpath.xlsx')
 with st.sidebar:
     st.title('Indicatoren van brede welvaart')
     # Check if df_indicators is a DataFrame and contains 'label'
-    type = st.radio("what would you like to visualise ?",
-        ["Themes", "Indicators"],
+    type = st.radio("Wat zou je willen visualiseren?",
+        ["Thema's", "Indicatoren"],
         captions = [
-            "Overall themes",
-            "Indicators within the themes"
+            "Algemene thema's",
+            "Indicatoren binnen de thema's"
         ],)
 
     if type == "Themes":
@@ -97,7 +97,6 @@ with col0[0]:
     # Get the column corresponding to the selected year
     selected_column = year_columns[selected_year]
 
-    # **2. Interactive pydeck Map**
     # Check if the selected column exists in the data
     if selected_column in indicator.columns:
         # **1. Static Plot using Matplotlib**
@@ -108,6 +107,7 @@ with col0[0]:
             column=selected_column,
             ax=ax,
             legend=True,
+            cmap="blues"
             legend_kwds={'orientation': 'vertical'}
         )
         plt.title(f"{title_base} van Nederland in {selected_year}")
@@ -116,9 +116,7 @@ with col0[0]:
         st.pyplot(fig)
     else:
         # If the column is not available, show a message
-        st.write(f"Data is unavailable for the year {selected_year}.")
-
-st.write("Welkom bij het hoofddashboard. Gebruik de knop hierboven om te navigeren.")
+        st.write(f"Gegevens zijn niet beschikbaar voor het jaar")
         
 with col0[1]:
 
@@ -141,15 +139,18 @@ with col0[1]:
         st.markdown('**Welkom bij{selected_indicator}**')
 
     st.expander('About', expanded=True)
-    # Filter rows based on label and year
+    df_indicators['jaar'] = df_indicators['jaar'].astype(str)  # Convert to string
+    selected_year = str(selected_year)  # Convert selected year to string
+
     df_selectedindicator = df_indicators[
-        (df_indicators['label'] == selected_indicator) &  # Filter by label
-        (df_indicators['jaar'] == df_indicators['jaar'].max())
-    ]
+        (df_indicators['label'] == selected_indicator)&
+        (df_indicators['jaar'] == selected_year)]
 
-    df_selectedindicator_sorted = df_selectedindicator.sort_values(by='waarde', ascending=True)
+    df_selectedindicator_sorted = df_selectedindicator.sort_values(by='waarde', ascending=False)
+    
+    columns_to_include = ['statnaam', 'waarde'] 
 
-    #df_selectedindicator_sorted = df_selectedindicator_sorted[columns_to_include]
+    df_selectedindicator_sorted = df_selectedindicator_sorted[columns_to_include]
 
     st.markdown(f'**Gemeenten gerangschikt van hoog naar laag in {selected_indicator}**')
 
