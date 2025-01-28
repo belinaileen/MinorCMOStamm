@@ -193,8 +193,6 @@ with col0[1]:
     ontwikkelen van een visie en strategie voor beleid.
     ''')
 
-    st.expander('About', expanded=True)
-
     df_indicators['jaar'] = df_indicators['jaar'].astype(str)  # Convert to string
     selected_year = str(selected_year)  # Convert selected year to string
 
@@ -207,27 +205,27 @@ with col0[1]:
     columns_to_include = ['statnaam', 'waarde'] 
     
     df_selectedindicator_sorted = df_selectedindicator_sorted[columns_to_include]
+    with st.expander('Ongeveer', expanded=True):
+        st.markdown(f'**Gemeenten gerangschikt van hoog naar laag in {selected_indicator}**')
 
-    st.markdown(f'**Gemeenten gerangschikt van hoog naar laag in {selected_indicator}**')
-
-    if df_selectedindicator_sorted.empty:
-            st.warning("Geen gegevens beschikbaar voor de geselecteerde indicator.")
-    else:
-        # Display the DataFrame using Streamlit
-        st.dataframe(
-        df_selectedindicator_sorted, 
-        column_order=("statnaam", "waarde"), 
-        hide_index=True, 
-        width=None, 
-        column_config={
-            "statnaam": st.column_config.TextColumn(
-                "Statnaam",
-            ),
-            "waarde": st.column_config.TextColumn(
-                "Waarde",  # This will now display as plain numbers
-            ),
-        }
-    )
+        if df_selectedindicator_sorted.empty:
+                st.warning("Geen gegevens beschikbaar voor de geselecteerde indicator.")
+        else:
+            # Display the DataFrame using Streamlit
+            st.dataframe(
+            df_selectedindicator_sorted, 
+            column_order=("statnaam", "waarde"), 
+            hide_index=True, 
+            width=None, 
+            column_config={
+                "statnaam": st.column_config.TextColumn(
+                    "Statnaam",
+                ),
+                "waarde": st.column_config.TextColumn(
+                    "Waarde",  # This will now display as plain numbers
+                ),
+            }
+        )
     with st.expander('Ongeveer', expanded=True):
         st.write('''
             - Data: [CBS data: Nederland (https://www.cbs.nl/nl-nl/visualisaties/regionale-monitor-brede-welvaart/indicator)]''')
