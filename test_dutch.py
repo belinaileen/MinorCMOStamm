@@ -676,7 +676,7 @@ color_schemes = {
         [204, 255, 204],  # 0-25% quantile range
         [128, 255, 128],  # 25-50% quantile range
         [51, 255, 51],    # 50-75% quantile range
-        [0, 230, 0]       # 75-100% quantile range
+        [0, 230, 0],      # 75-100% quantile range
         [0, 153, 0]       # 75-100% quantile range
     ]
 }
