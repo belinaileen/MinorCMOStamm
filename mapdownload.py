@@ -120,27 +120,43 @@ with col0[0]:
         else:  # 75-100% quantile range
             return selected_scheme[4]
             
-    # Check if the selected column exists in the data
-    if selected_column in indicator.columns:
-        fig = plt.figure(figsize=[12, 8])
-        ax = fig.add_axes([0, 0, 1, 1])
+import matplotlib.colors as mcolors
+import matplotlib.pyplot as plt
+import streamlit as st
+import geopandas as gpd
 
-        # Plot the data with the blue colormap
-        indicator.plot(
-            column=selected_column,
-            ax=ax,
-            legend=True,
-            cmap=selected_scheme, 
-            legend_kwds={'orientation': 'vertical'}
-        )
-        plt.title(f"{title_base} van Nederland in {selected_year}")
+# Convert the RGB values from 0-255 to 0-1 scale
+def create_colormap(rgb_list):
+    norm_rgb_list = [[r/255, g/255, b/255] for r, g, b in rgb_list]
+    return mcolors.ListedColormap(norm_rgb_list)
 
-        # Display the figure in Streamlit
-        st.pyplot(fig)
-    else:
-        # If the column is not available, show a message
-        st.write(f"Gegevens zijn niet beschikbaar voor het jaar")
-        
+# Ensure selected_scheme is a valid colormap
+if selected_scheme in color_schemes:
+    cmap = create_colormap(color_schemes[selected_scheme])
+else:
+    cmap = "Blues"  # Default to a valid Matplotlib colormap
+
+# Check if the selected column exists
+if selected_column in indicator.columns:
+    fig = plt.figure(figsize=[12, 8])
+    ax = fig.add_axes([0, 0, 1, 1])
+
+    # Plot with the converted colormap
+    indicator.plot(
+        column=selected_column,
+        ax=ax,
+        legend=True,
+        cmap=cmap,  
+        legend_kwds={'orientation': 'vertical'}
+    )
+    
+    plt.title(f"{title_base} van Nederland in {selected_year}")
+
+    # Display the figure in Streamlit
+    st.pyplot(fig)
+else:
+    st.write(f"Gegevens zijn niet beschikbaar voor het jaar")
+
 with col0[1]:
 
     st.markdown(f'**Wat is Brede Welvaart ?**')
