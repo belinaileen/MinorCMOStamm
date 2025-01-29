@@ -8,6 +8,7 @@ import pydeck as pdk
 from test_dutch import file_options
 from dutchdict import Themes # A custom dictionary providing thematic descriptions
 from test_dutch import color_schemes # A dictionary for color schemes
+import matplotlib.colors as mcolors
 
 # Page configuration
 st.set_page_config(
@@ -119,11 +120,6 @@ with col0[0]:
             return selected_scheme[3]
         else:  # 75-100% quantile range
             return selected_scheme[4]
-            
-import matplotlib.colors as mcolors
-import matplotlib.pyplot as plt
-import streamlit as st
-import geopandas as gpd
 
 # Convert the RGB values from 0-255 to 0-1 scale
 def create_colormap(rgb_list):
