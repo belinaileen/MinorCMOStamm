@@ -6,6 +6,7 @@ import geopandas as gpd
 import matplotlib.pyplot as plt
 import pydeck as pdk
 from test_dutch import file_options
+from dutchdict import Themes # A custom dictionary providing thematic descriptions
 
 # Page configuration
 st.set_page_config(
