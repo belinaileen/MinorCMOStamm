@@ -71,7 +71,7 @@ with st.sidebar:
         ],)
 
     if type == "Themes":
-        options = df_thema["Themes"].dropna().unique().tolist()
+        options = df_thema["Thema"].dropna().unique().tolist()
     else:
         options = file_options
 
