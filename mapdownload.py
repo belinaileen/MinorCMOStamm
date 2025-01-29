@@ -139,43 +139,9 @@ with col0[1]:
     ''')
 
     if selected_indicator:
-        st.markdown('**Welkom bij{selected_indicator}**')
+        st.markdown(Themes[selected_indicator])
 
-    st.expander('About', expanded=True)
-    df_indicators['jaar'] = df_indicators['jaar'].astype(str)  # Convert to string
-    selected_year = str(selected_year)  # Convert selected year to string
-
-    df_selectedindicator = df_indicators[
-        (df_indicators['label'] == selected_indicator)&
-        (df_indicators['jaar'] == selected_year)]
-
-    df_selectedindicator_sorted = df_selectedindicator.sort_values(by='waarde', ascending=False)
-    
-    columns_to_include = ['statnaam', 'waarde'] 
-
-    df_selectedindicator_sorted = df_selectedindicator_sorted[columns_to_include]
-
-    st.markdown(f'**Gemeenten gerangschikt van hoog naar laag in {selected_indicator}**')
-
-    if df_selectedindicator_sorted.empty:
-            st.warning("Geen gegevens beschikbaar voor de geselecteerde indicator.")
-    else:
-        # Display the DataFrame using Streamlit
-        st.dataframe(
-        df_selectedindicator_sorted, 
-        column_order=("statnaam", "waarde"), 
-        hide_index=True, 
-        width=None, 
-        column_config={
-            "statnaam": st.column_config.TextColumn(
-                "Statnaam",
-            ),
-            "waarde": st.column_config.TextColumn(
-                "Waarde",  # This will now display as plain numbers
-            ),
-        }
-    )
-    with st.expander('About', expanded=True):
+    with st.expander('Ongeveer', expanded=True):
         st.write('''
             - Data: [CBS data: Nederland (https://www.cbs.nl/nl-nl/visualisaties/regionale-monitor-brede-welvaart/indicator)]''')
 
