@@ -100,21 +100,37 @@ with col0[0]:
 
     # Get the column corresponding to the selected year
     selected_column = year_columns[selected_year]
+    
+    # Handle missing values: Set them to NaN and assign them a white color later
+    indicator[selected_column] = pd.to_numeric(indicator[selected_column], errors='coerce')
 
+    # Calculate quantiles
+    quantiles = indicator[selected_column].quantile([0.0, 0.25, 0.5, 0.75, 1.0]).values
+    
+    # Function to assign colors based on quantile
+    def get_color(value):
+        if pd.isna(value):
+            return selected_scheme[0]#for missing values
+        elif value <= quantiles[1]:  # 0-25% quantile range
+            return selected_scheme[1] 
+        elif value <= quantiles[2]:  # 25-50% quantile range
+            return selected_scheme[2] 
+        elif value <= quantiles[3]:  # 50-75% quantile range
+            return selected_scheme[3]
+        else:  # 75-100% quantile range
+            return selected_scheme[4]
+            
     # Check if the selected column exists in the data
     if selected_column in indicator.columns:
         fig = plt.figure(figsize=[12, 8])
         ax = fig.add_axes([0, 0, 1, 1])
-
-        # Use a blue colormap
-        blue_colormap = 'Blues'
 
         # Plot the data with the blue colormap
         indicator.plot(
             column=selected_column,
             ax=ax,
             legend=True,
-            cmap=blue_colormap,  # Specify the blue colormap
+            cmap=selected_scheme, 
             legend_kwds={'orientation': 'vertical'}
         )
         plt.title(f"{title_base} van Nederland in {selected_year}")
