@@ -153,6 +153,9 @@ with col0[0]:
     else:
         st.write(f"Gegevens zijn niet beschikbaar voor het jaar")
 
+    if selected_indicator:
+        st.markdown(Themes[selected_indicator])
+
 with col0[1]:
 
     st.markdown(f'**Wat is Brede Welvaart ?**')
@@ -169,9 +172,6 @@ with col0[1]:
     wij door bewustwording te vergroten, het monitoren en uitvoeren van onderzoek en het 
     ontwikkelen van een visie en strategie voor beleid.
     ''')
-
-    if selected_indicator:
-        st.markdown(Themes[selected_indicator])
 
     with st.expander('Ongeveer', expanded=True):
         st.write('''
