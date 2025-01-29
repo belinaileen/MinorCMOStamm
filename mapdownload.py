@@ -64,13 +64,13 @@ with st.sidebar:
     st.title('Indicatoren van brede welvaart')
     # Check if df_indicators is a DataFrame and contains 'label'
     type = st.radio("Wat zou je willen visualiseren?",
-        ["Thema's", "Indicatoren"],
+        ["Themes", "Indicators"],
         captions = [
             "Algemene thema's",
             "Indicatoren binnen de thema's"
         ],)
 
-    if type == "Thema's":
+    if type == "Themes":
         options = df_thema["Themes"].dropna().unique().tolist()
     else:
         options = file_options
