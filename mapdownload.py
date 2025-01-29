@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 import pydeck as pdk
 from test_dutch import file_options
 from dutchdict import Themes # A custom dictionary providing thematic descriptions
+from test_dutch import color_schemes # A dictionary for color schemes
 
 # Page configuration
 st.set_page_config(
@@ -82,7 +83,9 @@ with st.sidebar:
     file_info = file_options[selected_indicator]
     year_columns = file_info["year_columns"]
     selected_year = st.selectbox("Selecteer een jaar:", list(year_columns.keys()))
-
+    
+    selected_scheme_name = st.selectbox("Select a color scheme:", list(color_schemes.keys()))
+    selected_scheme = color_schemes[selected_scheme_name]
 #######################
 # Dashboard Main Panel
 col0 = st.columns((5, 3), gap='medium')
