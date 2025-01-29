@@ -55,7 +55,6 @@ st.markdown("""
 
 #######################
 # Load data
-#df_meta = pd.read_csv('meta.csv')
 df_indicators = pd.read_csv('indmaarmunn.csv')
 df_thema = pd.read_excel('thematicpath.xlsx')
 
@@ -75,7 +74,6 @@ with st.sidebar:
         options = df_thema["Thema"].dropna().unique().tolist()
     else:
         options = file_options
-
 
     selected_indicator = st.selectbox("Select a Theme/an Indicator:", options)
 
