@@ -7,7 +7,8 @@ import geopandas as gpd
 import matplotlib.pyplot as plt # For plotting charts 
 from dutchdict import Themes # A custom dictionary providing thematic descriptions
 from dutchdict import Sources # A custom dictionary providing sources for spillover calculations
-from test_dutch import file_options # A dictionary for mapping themes/indicators to file paths, titles, and year columns
+from test_dutch import file_options_indicators # A dictionary for mapping themes/indicators to file paths, titles, and year columns
+from test_dutch import file_options_themes # A dictionary for mapping themes/indicators to file paths, titles, and year columns
 from test_dutch import color_schemes # A dictionary for color schemes
 import folium # For creating interactive Leaflet-based maps
 from folium.plugins import HeatMap
