@@ -58,7 +58,7 @@ with st.sidebar:
              ],)
 
     if type == "Themes":
-        options = df_thema["Theme"].dropna().unique().tolist()
+        options = df_indicators["Theme"].dropna().unique().tolist()
     else:
         options = file_options
 
@@ -180,13 +180,13 @@ with col[1]:
         selected_year = str(selected_year)  # Convert selected year to string
 
         df_selectedindicator = df_indicators[
-            (df_indicators['label'] == selected_indicator) &
+            (df_indicators['Label'] == selected_indicator) &
             (df_indicators['jaar'] == selected_year)
         ]
 
         df_selectedindicator_sorted = df_selectedindicator.sort_values(by='waarde', ascending=False)
 
-        columns_to_include = ['statnaam', 'waarde']
+        columns_to_include = ['meentenaam', 'waarde']
 
         df_selectedindicator_sorted = df_selectedindicator_sorted[columns_to_include]
         with st.expander(f'*Municipalities ranked from high to low in {selected_indicator}*'):
@@ -197,11 +197,11 @@ with col[1]:
                 # Display the DataFrame using Streamlit
                 st.dataframe(
                     df_selectedindicator_sorted,
-                    column_order=("statnaam", "waarde"),
+                    column_order=("meentenaam", "waarde"),
                     hide_index=True,
                     width=None,
                     column_config={
-                        "statnaam": st.column_config.TextColumn(
+                        "meentenaam": st.column_config.TextColumn(
                             "Municipality",
                         ),
                         "waarde": st.column_config.TextColumn(
