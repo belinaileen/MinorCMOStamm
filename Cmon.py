@@ -230,9 +230,9 @@ with col0[1]:
         st.write('''
             - Data: [CBS data: Nederland (https://www.cbs.nl/nl-nl/visualisaties/regionale-monitor-brede-welvaart/indicator)]''')
         if selected_indicator in Sources:
-            st.markdown(Sources[selected_indicator])
+            st.write(Sources[selected_indicator])
         else:
-            st.markdown("")  # Blank output
+            st.write("")  # Blank output
         
     st.markdown("""
     <div style='text-align: left; padding: 10px; display: flex; align-items: center;'>
