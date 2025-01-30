@@ -129,8 +129,8 @@ Themes = {
         - Met behulp van zone-statistieken zijn de geüpdatete rastercellen terug gerekend naar de gemeentelijke polygonen. Voor elk gemeentelijk polygoon is de gemiddelde waarde van alle rastercellen binnen de grenzen berekend. Dit resulteert in één waarde voor de afstand tot het openbaar vervoer per gemeente, waarbij rekening wordt gehouden met reizen over gemeentegrenzen.
         - Ten slotte, als de berekende ruimtelijke spillover afstand groter is dan de oorspronkelijke waarde, blijft de oorspronkelijke waarde behouden. Dit betekent dat de oorspronkelijke waarde alleen wordt bijgewerkt wanneer er een compenserende ruimtelijke spillover tussen gemeenten is, ervan uitgaande dat individuen niet verder reizen naar een aangrenzende gemeente als de voorziening dichterbij beschikbaar is in hun eigen woonplaats.
     """,
-    "Afstand tot sportvelden": """
-        **Welkom bij Afstand tot sportvelden indicator**
+    "Afstand tot sportterrein": """
+        **Welkom bij Afstand tot sportterrein indicator**
         - Deze indicator is onderdeel van het Wonen thema.
         - Meeteenheid: kilometers
         - Voor deze indicator wordt gewerkt met een een ruimtelijke spillover-/compensatieafstand van 1 km. Dit betekent dat er aangenomen wordt dat men gemiddeld bereid is om 1 km te reizen voor toegang tot sport. De gemiddelde afstanden tot sportvelden per gemeente zijn verstrekt door het CBS.
