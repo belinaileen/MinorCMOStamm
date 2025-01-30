@@ -255,8 +255,8 @@ file_options_indicators = {
             '2022': 'Year2022',
             '2023': 'Year2023',
         },
-    },
         "title": "Vertrouwen in anderen",
+    },
     "Vrijwilligerswerk": {
         "year_columns": {
             '2013': 'Year2013',
