@@ -60,7 +60,6 @@ st.markdown("""
 #######################
 # Loading datasets
 df_indicators = pd.read_csv('indmaarmunn.csv')
-df_thema = pd.read_excel('thematicpath.xlsx')
 
 #######################
 # Sidebar
