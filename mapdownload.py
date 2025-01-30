@@ -102,7 +102,7 @@ with col0[0]:
     
     # Handle missing values: Set them to NaN and assign them a white color later
     indicator[selected_column] = pd.to_numeric(indicator[selected_column], errors='coerce')
-
+    
     # Calculate quantiles
     quantiles = indicator[selected_column].quantile([0.0, 0.25, 0.5, 0.75, 1.0]).values
     
@@ -123,7 +123,7 @@ with col0[0]:
     def create_colormap(rgb_list):
         norm_rgb_list = [[r/255, g/255, b/255] for r, g, b in rgb_list]
         return mcolors.ListedColormap(norm_rgb_list)
-    
+        
     # Ensure selected_scheme is a valid colormap
     if selected_scheme in color_schemes:
         cmap = create_colormap(color_schemes[selected_scheme])
