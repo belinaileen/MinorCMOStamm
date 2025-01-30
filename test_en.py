@@ -1,5 +1,5 @@
 
-file_options = {
+file_options_indicators= {
     'Average debt per household': {
         'path': 'AverageDebt.geojson',
         'year_columns': {
