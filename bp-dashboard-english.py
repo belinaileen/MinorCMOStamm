@@ -71,6 +71,11 @@ with st.sidebar:
     selected_scheme_name = st.selectbox("Select a color scheme:", list(color_schemes.keys()))
     selected_scheme = color_schemes[selected_scheme_name]
 
+    if type == "Themes":
+        options = df_thema["Thema"].dropna().unique().tolist()
+    else:
+        options = file_options
+    
 # Correctly define columns
 col = st.columns((2,1), gap='medium')
 
