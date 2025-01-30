@@ -526,7 +526,7 @@ file_options_indicators = {
 }
     # 40 in total above - in shp folder there is 48 in total including thematic
 
-    file_options_themes = {
+file_options_themes = {
     # Thematic
     "Luchtkwaliteit": {
         "path": r"Update_Theme_Air_quality.geojson",
