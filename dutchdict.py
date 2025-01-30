@@ -390,7 +390,6 @@ Themes = {
         - Om gemeentelijke spillovers in kaart te brengen, zijn de CBS-gegevens over geregistreerde problematische schulden geanalyseerd met behulp van ArcGIS Pro. Eerst werden aangrenzende gemeenten bepaald op basis van gedeelde grenzen, gedefinieerd als geometrieën die elkaar raken. Vervolgens werden voor elke gemeente twee variabelen geactiveerd: één om de huishoudens van de gemeente en haar aangrenzende gemeenten die geregistreerde problematische schulden hebben op te tellen, en een andere om het totale aantal huishoudens van de gemeente en haar aangrenzende gemeenten op te tellen. Het doel is om een gecombineerde score te berekenen door ook de aangrenzende gemeenten mee te nemen.
         - Het berekende totale aantal huishoudens die geregistreerde problematische schulden hebben en het totale aantal huishoudens werden vervolgens gebruikt om terug te rekenen naar het percentage huishoudens die geregistreerde problematische schulden hebben.
     """,
-
     # Themes 
 
     "Gezondheid": """
