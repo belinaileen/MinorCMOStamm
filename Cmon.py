@@ -86,7 +86,7 @@ with st.sidebar:
 
     jaar = df_indicators['jaar'].dropna().unique().tolist()
     
-    year_columns = file_options[selected_indicator]["year_columns"]
+    year_columns = options[selected_indicator]["year_columns"]
     selected_year = st.selectbox("Selecteer een jaar:", list(year_columns.keys()))
 
     selected_scheme_name = st.selectbox("Select a color scheme:", list(color_schemes.keys()))
