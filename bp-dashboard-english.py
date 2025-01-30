@@ -42,8 +42,7 @@ st.markdown("""
 
 #######################
 # Loading datasets
-df_indicators = pd.read_csv('indmaarmunn.csv')
-df_thema = pd.read_excel('small_mergedEN.xlsx')
+df_indicators = pd.read_csv('small_mergedEN.csv')
 
 #######################
 
@@ -72,13 +71,12 @@ with st.sidebar:
     selected_scheme = color_schemes[selected_scheme_name]
 
     if type == "Themes":
-        options = df_thema["Thema"].dropna().unique().tolist()
+        options = df_indicators["Thema"].dropna().unique().tolist()
     else:
         options = file_options
     
 # Correctly define columns
 col = st.columns((2,1), gap='medium')
-
 
 #  map
 with col[0]:
