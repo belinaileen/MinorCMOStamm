@@ -42,7 +42,7 @@ st.markdown("""
 
 #######################
 # Loading datasets
-df_indicators = pd.read_csv('small_mergedEN.csv')
+df_indicators = pd.read_csv('small_mergedEN.xlsx')
 
 #######################
 
