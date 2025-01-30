@@ -5,7 +5,9 @@ import pandas as pd
 import geopandas as gpd
 import matplotlib.pyplot as plt
 import pydeck as pdk
-from path_dutch import file_options
+from path_dutch import file_options_indicators
+from path_dutch import file_options_themes
+from path_dutch import options
 from dutchdict import Themes # A custom dictionary providing thematic descriptions
 from path_dutch import color_schemes # A dictionary for color schemes
 import matplotlib.colors as mcolors
@@ -71,15 +73,15 @@ with st.sidebar:
         ],)
 
     if type == "Themes":
-        options = df_thema["Thema"].dropna().unique().tolist()
+        options = file_options_themes
     else:
-        options = file_options
+        options = file_options_indicators
 
     selected_indicator = st.selectbox("Select a Theme/an Indicator:", options)
 
     jaar = df_indicators['jaar'].dropna().unique().tolist()
     # Dropdown menu for selecting the year
-    file_info = file_options[selected_indicator]
+    file_info = options[selected_indicator]
     year_columns = file_info["year_columns"]
     selected_year = st.selectbox("Selecteer een jaar:", list(year_columns.keys()))
 
@@ -91,7 +93,7 @@ col0 = st.columns((5, 3), gap='medium')
 
 with col0[0]:
     #Extract path, year_columns, and title based on selection
-    indicator_path = file_options[selected_indicator]["path"]
+    indicator_path = options[selected_indicator]["path"]
     title_base = file_info["title"]
 
     # Load the selected file
