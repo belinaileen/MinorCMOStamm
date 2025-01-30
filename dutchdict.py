@@ -227,7 +227,7 @@ Themes = {
         - Om gemeentelijke spillovers in kaart te brengen, zijn de CBS-gegevens over vrijwilligerswerk geanalyseerd met behulp van ArcGIS Pro. Eerst werden aangrenzende gemeenten bepaald op basis van gedeelde grenzen, gedefinieerd als geometrieën die elkaar raken. Vervolgens werden voor elke gemeente twee variabelen geactiveerd: één om de bevolking van de gemeente en haar aangrenzende gemeenten die vrijwilligerswerk doen op te tellen, en een andere om de totale bevolking van de gemeente en haar aangrenzende gemeenten op te tellen. Het doel is om een gecombineerde score te berekenen door ook de aangrenzende gemeenten mee te nemen.
         - Het berekende totale aantal inwoners die vrijwilligerswerk doen en het totale aantal inwoners werden vervolgens gebruikt om terug te rekenen naar het percentage inwoners die vrijwilligerswerk doen.
     """,
-    "Vaak onveilig voelen in de buurt": """
+    "Vaak onveilig gevoel in de buurt": """
         **Welkom bij Vaak onveilig voelen in de buurt indicator**
         - Deze indicator is onderdeel van het Veiligheid thema.
         - Meeteenheid: percentage van de bevolking van 15 jaar en ouder
