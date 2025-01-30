@@ -384,8 +384,7 @@ Themes = {
     """,
     "Geregisteerde problematische schulden": """
         **Welkom bij Geregisteerde problematische schulden indicator**
-        - Deze indicator is onderdeel van het Sociaal kapitaal
-        - Meeteenheid: schaalscore (0-10)
+        - Deze indicator is onderdeel van het Materiaal Welvaart
         - Voor deze indicator kan geen specifieke ruimtelijke spillover-/compensatieafstand worden aangenomen, omdat hierover geen relevante literatuur beschikbaar is. Daarom wordt in deze analyse een eerste-orde-contiguïteit (first order contiguity) toegepast. Dit betekent dat aangenomen wordt dat wanneer gemeenten een grens delen, geregistreerde problematische schulden over deze grenzen heen overlopen. De gemiddelde waarde voor geregistreerde problematische schulden per gemeente wordt gegeven door het CBS, als percentage van de huishoudens die geregistreerde problematische schulden hebben.
         - Om rekening te houden met de bevolkingsgrootte van elke gemeente, moest het percentage van de huishoudens die geregistreerde problematische schulden hebben, worden omgezet naar het totale aantal huishoudens die geregistreerde problematische schulden hebben. Dit aantal is gebruikt in de verdere berekeningen.
         - Om gemeentelijke spillovers in kaart te brengen, zijn de CBS-gegevens over geregistreerde problematische schulden geanalyseerd met behulp van ArcGIS Pro. Eerst werden aangrenzende gemeenten bepaald op basis van gedeelde grenzen, gedefinieerd als geometrieën die elkaar raken. Vervolgens werden voor elke gemeente twee variabelen geactiveerd: één om de huishoudens van de gemeente en haar aangrenzende gemeenten die geregistreerde problematische schulden hebben op te tellen, en een andere om het totale aantal huishoudens van de gemeente en haar aangrenzende gemeenten op te tellen. Het doel is om een gecombineerde score te berekenen door ook de aangrenzende gemeenten mee te nemen.
