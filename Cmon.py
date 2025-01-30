@@ -78,9 +78,9 @@ with st.sidebar:
     # For "Themes," the options are derived from df_thema["Thema"]
     # For "Indicators," the options are from file_options from the test_dutch.py file
     if type == "Themes":
-        options = df_thema["Thema"].dropna().unique().tolist()
+        options = file_options_themes
     else:
-        options = file_options
+        options = file_options_indicators
 
     selected_indicator = st.selectbox("Select a Theme/an Indicator:", options)
 
@@ -98,8 +98,8 @@ col0 = st.columns((5, 3), gap='medium')
 
 with col0[0]:
     #Extract path, year_columns, and title based on selection
-    indicator_path = file_options[selected_indicator]["path"]
-    title_base = file_options[selected_indicator]["title"]
+    indicator_path = options[selected_indicator]["path"]
+    title_base = options[selected_indicator]["title"]
 
     # Load the selected file
     indicator = gpd.read_file(indicator_path)
