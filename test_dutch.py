@@ -512,7 +512,7 @@ file_options_indicators = {
         },
         "title": "Tevredenheid met sociaal leven",
     },
-    "Emissions Particulate Matter": {
+    "Emissies van fijnstof naar lucht": {
         "path": r"Update_Emissions_particulate_matter.geojson",
         "year_columns": {
             "2015": "Year2015",
@@ -521,7 +521,7 @@ file_options_indicators = {
             "2021": "Year2021",
             "2022": "Year2022",
         },
-        "title": "Emissions Particulate Matter",
+        "title": "Emissies van fijnstof naar lucht",
     },
 }
     # 40 in total above - in shp folder there is 48 in total including thematic
