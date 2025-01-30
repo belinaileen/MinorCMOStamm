@@ -5,9 +5,9 @@ import pandas as pd
 import geopandas as gpd
 import matplotlib.pyplot as plt
 import pydeck as pdk
-from test_dutch import file_options
+from path_dutch import file_options
 from dutchdict import Themes # A custom dictionary providing thematic descriptions
-from test_dutch import color_schemes # A dictionary for color schemes
+from path_dutch import color_schemes # A dictionary for color schemes
 import matplotlib.colors as mcolors
 
 # Page configuration
