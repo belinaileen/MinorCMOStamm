@@ -17,7 +17,7 @@ import json # For processing geoJSON data
 
 # Page configuration
 st.set_page_config(
-    page_title="Broad Prosperity: Netherlands",
+    page_title="Brede welvaart: Nederland",
     layout="wide",
     initial_sidebar_state="expanded")
 
@@ -67,28 +67,26 @@ with st.sidebar:
     st.title('Indicatoren van brede welvaart')
 
     # st.radio lets audience choose between visualising "Thema" or "Indicators" 
-    type = st.radio("what would you like to visualise ?",
-        ["Themes", "Indicators"],
+    type = st.radio("wat zou je willen visualiseren?",
+        ["Thema's", "Indicatoren"],
         captions = [
-            "Overall themes",
-            "Indicators within the themes"
+            "Algemene thema's",
+            "Indicatoren binnen de thema's"
         ],)
 
-    # For "Themes," the options are derived from df_thema["Thema"]
-    # For "Indicators," the options are from file_options from the test_dutch.py file
-    if type == "Themes":
+    if type == "Thema's":
         options = file_options_themes
     else:
         options = file_options_indicators
 
-    selected_indicator = st.selectbox("Select a Theme/an Indicator:", options)
+    selected_indicator = st.selectbox("Selecteer een thema of een indicator:", options)
 
     jaar = df_indicators['jaar'].dropna().unique().tolist()
     
     year_columns = options[selected_indicator]["year_columns"]
     selected_year = st.selectbox("Selecteer een jaar:", list(year_columns.keys()))
 
-    selected_scheme_name = st.selectbox("Select a color scheme:", list(color_schemes.keys()))
+    selected_scheme_name = st.selectbox("Selecteer een kleurenschema:", list(color_schemes.keys()))
     selected_scheme = color_schemes[selected_scheme_name]
 
 #######################
