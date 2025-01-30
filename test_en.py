@@ -1,5 +1,6 @@
 
-file_options_indicators= {
+# Define the file options and their year-to-fieldname mappings
+indicator_options = {
     'Average debt per household': {
         'path': 'AverageDebt.geojson',
         'year_columns': {
@@ -193,6 +194,23 @@ file_options_indicators= {
             '2017': 'Year2017',
         },
         'title': 'Nature and forest areas',
+    },
+    'Net labor participation': {
+        'path': 'NetLaborParticipation.geojson',
+        'year_columns': {
+            '2013': 'Year2013',
+            '2014': 'Year2014',
+            '2015': 'Year2015',
+            '2016': 'Year2016',
+            '2017': 'Year2017',
+            '2018': 'Year2018',
+            '2019': 'Year2019',
+            '2020': 'Year2020',
+            '2021': 'Year2021',
+            '2022': 'Year2022',
+            '2023': 'Year2023',
+        },
+        'title': 'Net labor participation',
     },
     'Number of crimes encountered': {
         'path': 'NumberCrimes.geojson',
@@ -474,7 +492,9 @@ file_options_indicators= {
             '2023': 'Year2023',
         },
         'title': 'Volunteer work',
-    },
+    }
+}
+theme_options= {
     'Air quality': {
         'path': 'Theme_Air_Quality.geojson',
         'year_columns': {
@@ -566,7 +586,7 @@ file_options_indicators= {
         },
         'title': 'Society',
     },
-    'Subjective well-being': {
+    'Well-being': {
         'path': 'Theme_Wellbeing.geojson',
         'year_columns': {
             '2013': 'Year2013',
@@ -612,7 +632,6 @@ color_schemes = {
         [204, 255, 204],  # 0-25% quantile range
         [128, 255, 128],  # 25-50% quantile range
         [51, 255, 51],    # 50-75% quantile range
-        [0, 230, 0],      # 75-100% quantile range
         [0, 153, 0]       # 75-100% quantile range
     ]
 }
