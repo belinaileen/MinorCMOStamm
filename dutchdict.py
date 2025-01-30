@@ -573,7 +573,7 @@ Sources = {
         "Afstand tot basisschool": """ # Distance to primary school
         - Source for spillover calculation: https://ijbnpa.biomedcentral.com/articles/10.1186/1479-5868-5-1
     """,
-        "Afstand tot cafÃ© e.d.": """ # Distance to café etc.
+        "Afstand tot café e.d.": """ # Distance to café etc.
         - Source for spillover calculation: https://www.cdc.gov/pcd/issues/2015/15_0065.htm#:~:text=The%20median%20distance%20to%20sit,0.4%20miles%20to%20grocery%2Fsupermarkets.
     """,
         "Vertrouwen in instituties": """ # Trust in institutions
