@@ -8,6 +8,7 @@ import pydeck as pdk
 from path_dutch import file_options_indicators
 from path_dutch import file_options_themes
 from dutchdict import Themes # A custom dictionary providing thematic descriptions
+from dutchdict import Expander
 from path_dutch import color_schemes # A dictionary for color schemes
 import matplotlib.colors as mcolors
 
