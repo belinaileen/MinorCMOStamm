@@ -5,8 +5,8 @@ import streamlit as st # build interactive dashboard
 import pydeck as pdk  # To create interactive map visualizations
 import geopandas as gpd
 import matplotlib.pyplot as plt # For plotting charts 
-from dutchdict1 import Themes # A custom dictionary providing thematic descriptions
-from dutchdict1 import Expander
+from dutchdict import Themes # A custom dictionary providing thematic descriptions
+from dutchdict import Expander # A custom dictionary providing additional information on expander
 from dutchdict import Sources # A custom dictionary providing sources for spillover calculations
 from path_dutch import file_options_indicators # A dictionary for mapping themes/indicators to file paths, titles, and year columns
 from path_dutch import file_options_themes # A dictionary for mapping themes/indicators to file paths, titles, and year columns
