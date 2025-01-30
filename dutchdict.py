@@ -558,40 +558,40 @@ Themes = {
 }
 
 Sources = {
-        "Bevolking met een startkwalificatie": """ # People with a starting qualifications
+        "Bevolking met een startkwalificatie": """ 
         - Source for spillover calculation: https://www.sciencedirect.com/science/article/pii/S0166046222000163 
     """,
-        "Werkloosheid": """ # Unemployment
+        "Werkloosheid": """
         - Source for spillover calculation: https://www.sciencedirect.com/science/article/pii/S0166046222000163 
     """,
-        "Afstand tot ov": """ # Distance to public transport
+        "Afstand tot ov": """ 
         - Source for spillover calculation: https://www.researchgate.net/figure/Reported-values-for-willingness-to-walk-to-public-transport-in-meters-and-for-the_tbl1_358628261 
     """,
-        "Afstand tot sportterrein": """ # Distance to sports field
+        "Afstand tot sportterrein": """ 
         - Source for spillover calculation: https://www.sciencedirect.com/science/article/abs/pii/S1353829219304861?via%3Dihub
     """,
-        "Afstand tot basisschool": """ # Distance to primary school
+        "Afstand tot basisschool": """ 
         - Source for spillover calculation: https://ijbnpa.biomedcentral.com/articles/10.1186/1479-5868-5-1
     """,
-        "Afstand tot café e.d.": """ # Distance to café etc.
+        "Afstand tot café e.d.": """
         - Source for spillover calculation: https://www.cdc.gov/pcd/issues/2015/15_0065.htm#:~:text=The%20median%20distance%20to%20sit,0.4%20miles%20to%20grocery%2Fsupermarkets.
     """,
-        "Vertrouwen in instituties": """ # Trust in institutions
+        "Vertrouwen in instituties": """
         - Source for spillover calculation: https://ifh.wiwi.uni-goettingen.de/site/assets/files/8720/ifh_wp-41_2023.pdf
     """,
-        "Vertrouwen in anderen": """ # trust in others
+        "Vertrouwen in anderen": """ 
         - Source for spillover calculation: https://ifh.wiwi.uni-goettingen.de/site/assets/files/8720/ifh_wp-41_2023.pdf
     """,
-        "Afstand tot openbaar groen": """ # Distance to public green areas
+        "Afstand tot openbaar groen": """ 
         - Source for spillover calculation: https://pdf.sciencedirectassets.com/271856/1-s2.0-S0143622821X00161/1-s2.0-S0143622822000443/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBAaCXVzLWVhc3QtMSJGMEQCIDI1cXNOXi26MOMKhMD3oEF6bpPaoYlmGXIpM1rX3WUeAiAf1jWkQ2O2geUxauNJN%2BjNAb%2B74GRSsW%2Bpeet9HWfJwiq8BQio%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAUaDDA1OTAwMzU0Njg2NSIMQAToFxN5KD1yW4B9KpAFTbUl%2FvHHjA3j%2BXOtna5Xmh7nm%2BMRyBKrp%2Fh2yDjju28pCIciWXfwau7eIOYf6NFEjxWNHkGc8UxUn7vtwTydSmw3%2BZHX6Y4TPzdqdplNSxPSjfoRdk9TpLTBiSrlIKzBht2WfSW%2B%2BNZQemyZB3dQoz3hXi0LiXD3n%2Bul%2F%2F%2FUuQ6sgQ6RU40Smq%2BhoEEeLhk39P4cZaHDmtQhOEMhQvpAyCwHc0aXhKDnuvlkg6y9i5IxL2xSr5EhfhdrSW4%2BkOf%2F4pwDVQ65YLdgYm71dYpV2SnalampwUNRJdSbgJCc0vbc8azmkpT39XORXErkM0FU%2BjixgQVT9qFB3kGNw1nXAwr4wQa5OLoRo2ePNYoYOiN29irbmLciXtYHlqsdF1z6O4O8sqnHpMXyYuaOR1t9lcdeTY4ROa8p0ieLPFcx9rzYHVBJ%2Bod%2BtBEWJ9qWpnOzxx%2FfTLaHeVrxMq4o89Xku8h1AfpfWHiLMZZcplHdIf787c1wTCgAJZ5gTeZW8VpnVfo0lIfuHTyw6uZlWDf6DC6ZdrqFNamyyQi2r7%2BOaQY63TI%2FLopiWeCRP%2FLD4sQeds4n96p5RKgjwrCcwm6MRprqgmvgXDqpPIcR%2BMvDGte3qu2yF9VoBEl7MxGktSJr5vxD8ZLngC8OZPpywRm9EhMi6e63lE202KSs25IhbQaQaHqSoT%2F0%2BgZjgFbJ%2Bv3FKngf7FWI90jO6hYtP0q0s%2FCDyfRV%2FjXA0matp3A5Yc5ClfZsIKxI0crGkEPi9Hecij7mMXt%2BxRiFFskKNp8aAf7W9BNbD89FMR6TULOVr3Hm8pF4HmA1Cd0slUwiR3aXMHI%2FmBL%2F0fU8wRX2TiRoIIYrWYiCndTQKmmLUj7gjR4wyZr9uQY6sgH39aiIjyCQjViIGxqXwzaHRLOLbj3KPcer91muLfXbq%2FfwQyPN%2B3aHO417%2FExOAX8OsgLrlf%2FDsvIAdOIMyAPinRuMQmetm95L0kSHcj5mmxnpds%2BLXIryHQzqHMz8G8PLmcKyTG9HosYiEIoGSp5cIqGIdSW6%2F3vFikLCqfV%2FehKLK4AtvFYBcEmF1JeVXZV3TOjIpnxsek77NsEF0ko43Q%2BUuKDCVnzW6n%2Fv0VBJN%2BQV&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20241121T154228Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQ3PHCVTYYS3KVGZV%2F20241121%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=2d71f50f79ae470cfd6b4a04e1bcd56d86fac47e70e4ac3fa7471f41be7af09e&hash=3f1a4f087252bb734def0d4bc943b7ac490d50c3ee07949d17c39d016de29a5c&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=S0143622822000443&tid=spdf-91fa4363-540b-499e-8423-05a32d28bef6&sid=ceb2aa3282359042885b7ee454d5e02afb8dgxrqb&type=client&tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&ua=080c5e0150530c045052&rr=8e61ca317ed29f5d&cc=nl
     """,
-        "Natuur- en bosgebieden": """ # Nature and forest areas
+        "Natuur- en bosgebieden": """ 
         - Source for spillover calculation: https://ijbnpa.biomedcentral.com/articles/10.1186/1479-5868-5-1
     """,
-        "Particuliere zonne-energie": """ # Private solar energy
+        "Particuliere zonne-energie": """
         - Source for spillover calculation: https://www.cdc.gov/pcd/issues/2015/15_0065.htm#:~:text=The%20median%20distance%20to%20sit,0.4%20miles%20to%20grocery%2Fsupermarkets.
     """,
-        "Emissies van fijnstof naar lucht": """ # emissions of particulate to air
+        "Emissies van fijnstof naar lucht": """ 
         - Source for spillover calculation: https://www.rivm.nl/ggd-richtlijn-medische-milieukunde-luchtkwaliteit-en-gezondheid/gezondheidseffecten-luchtverontreiniging/luchtkwaliteit-invloed-drukke-wegen
     """,
 }
