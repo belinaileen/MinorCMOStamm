@@ -6,6 +6,7 @@ import pydeck as pdk  # To create interactive map visualizations
 import geopandas as gpd
 import matplotlib.pyplot as plt # For plotting charts 
 from dutchdict import Themes # A custom dictionary providing thematic descriptions
+from dutchdict import Sources # A custom dictionary providing sources for spillover calculations
 from test_dutch import file_options # A dictionary for mapping themes/indicators to file paths, titles, and year columns
 from test_dutch import color_schemes # A dictionary for color schemes
 import folium # For creating interactive Leaflet-based maps
@@ -228,7 +229,9 @@ with col0[1]:
     with st.expander('Ongeveer', expanded=True):
         st.write('''
             - Data: [CBS data: Nederland (https://www.cbs.nl/nl-nl/visualisaties/regionale-monitor-brede-welvaart/indicator)]''')
-
+        if selected_indicator:
+            st.markdown(Sources[selected_indicator])
+        
     st.markdown("""
     <div style='text-align: left; padding: 10px; display: flex; align-items: center;'>
         <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>Voor de Engelse pagina:</h1>
