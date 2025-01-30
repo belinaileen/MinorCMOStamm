@@ -177,7 +177,7 @@ with col0[0]:
         st.markdown(Themes[selected_indicator])
     with st.expander(f'Meer Informatie'):
         if selected_indicator:
-            st.expander(Expander[selected_indicator])
+            st.write(Expander[selected_indicator])
 
 with col0[1]:
 
