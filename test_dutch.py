@@ -11,7 +11,7 @@ import pydeck as pdk
 # Emissions particulate matter
 
 # Define the file options and their year-to-fieldname mappings
-file_options = {
+file_options_indicators = {
     "Mediaan besteedbaar inkomen": {
         "year_columns": {
             '2013': 'Year2013',
@@ -206,7 +206,7 @@ file_options = {
         },
         "title": "Afstand tot café e.d.",
     },
-    # Contact with family, friends or neighbors - move to GitHub
+    # Contact with family, friends or neighbors 
     "Contact met familie, vrienden of buren": {
         "path": r"ContactWithFamilyEtc.geojson",
         "year_columns": {
@@ -328,7 +328,7 @@ file_options = {
         },
         "title": "Natuurgebied per inwoner",
     },
-    # Distance to public green areas - move to GitHub
+    # Distance to public green areas 
     "Afstand tot openbaar groen": {
         "path": r"DistanceToPublicGreenAreas.geojson",
         "year_columns": {
@@ -523,13 +523,10 @@ file_options = {
         },
         "title": "Emissions Particulate Matter",
     },
-
-# Indicator 01.10_NW has been added. Registered problematic debt /
-# Geregisteerde problematische schulden
-# Indicator 10.31_NW has been added. Satisfaction with social life / 
-# Tevredenheid met sociaal leven
-
+}
     # 40 in total above - in shp folder there is 48 in total including thematic
+
+    file_options_indicators = {
     # Thematic
     "Luchtkwaliteit": {
         "path": r"Update_Theme_Air_quality.geojson",
