@@ -584,3 +584,35 @@ file_options = {
         'title': 'Well-being',
     }
 }
+
+color_schemes = {
+    "Blues": [
+        [255, 255, 255],  # White for missing values
+        [228, 239, 209],  # 0-25% quantile range
+        [152, 197, 194],  # 25-50% quantile range
+        [73, 127, 153],   # 50-75% quantile range
+        [44, 86, 124]     # 75-100% quantile range
+    ],
+    "Reds": [
+        [255, 255, 255],  # White for missing values
+        [255, 194, 179],  # 0-25% quantile range
+        [255, 112, 77],   # 25-50% quantile range
+        [230, 46, 0],     # 50-75% quantile range
+        [153, 31, 0]      # 75-100% quantile range
+    ],
+    "Purples": [
+        [255, 255, 255],  # White for missing values
+        [255, 204, 255],  # 0-25% quantile range
+        [255, 128, 255],  # 25-50% quantile range
+        [255, 51, 255],   # 50-75% quantile range
+        [204, 0, 204]     # 75-100% quantile range
+    ],
+    "Greens": [
+        [255, 255, 255],  # White for missing values
+        [204, 255, 204],  # 0-25% quantile range
+        [128, 255, 128],  # 25-50% quantile range
+        [51, 255, 51],    # 50-75% quantile range
+        [0, 230, 0],      # 75-100% quantile range
+        [0, 153, 0]       # 75-100% quantile range
+    ]
+}
