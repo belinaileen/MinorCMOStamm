@@ -43,7 +43,7 @@ st.markdown("""
 #######################
 # Loading datasets
 df_indicators = pd.read_csv('indmaarmunn.csv')
-df_thema = pd.read_excel('thematicpath.xlsx')
+df_thema = pd.read_excel('selected_column.xlsx')
 
 #######################
 
@@ -59,7 +59,7 @@ with st.sidebar:
              ],)
 
     if type == "Themes":
-        options = df_thema["Thema"].dropna().unique().tolist()
+        options = df_thema["Theme"].dropna().unique().tolist()
     else:
         options = file_options
 
