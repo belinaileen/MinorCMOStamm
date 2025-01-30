@@ -177,7 +177,7 @@ with col0[1]:
 
 st.markdown(""" <div style='text-align: left; padding: 10px; display: flex; align-items: center;'>
     <h1 style='color: #e5007d; font-size: 20px; font-weight: bold; margin-top: 0; margin-right: 8px;'>Terug naar de Nederlandse pagina:</h1>
-    <a href="https://cmostamm-dutch.streamlit.app/" target="_blank" style="
+    <a href="https://bp-dashboard-dutch.streamlit.app/" target="_blank" style="
     text-decoration: none;
     background-color: #e5007d;
     color: white;
