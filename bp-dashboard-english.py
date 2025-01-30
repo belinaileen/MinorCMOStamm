@@ -7,7 +7,8 @@ import matplotlib.pyplot as plt
 import folium
 import json
 import pydeck as pdk 
-from test_en import file_options, color_schemes
+from test_en import file_options
+from test_en import color_schemes
 from engdict import Themes
 
 # Page configuration
