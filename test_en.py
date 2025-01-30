@@ -566,7 +566,7 @@ file_options = {
         },
         'title': 'Society',
     },
-    'Well-being': {
+    'Subjective well-being': {
         'path': 'Theme_Wellbeing.geojson',
         'year_columns': {
             '2013': 'Year2013',
