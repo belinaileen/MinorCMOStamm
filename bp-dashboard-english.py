@@ -7,8 +7,7 @@ import matplotlib.pyplot as plt
 import folium
 import json
 import pydeck as pdk 
-from test_en import file_options
-from test_en import color_schemes
+from path_en import indicator_options, theme_options, color_schemes
 from engdict import Themes
 
 # Page configuration
@@ -42,7 +41,7 @@ st.markdown("""
 
 #######################
 # Loading datasets
-df_indicators = pd.read_excel('small_mergedEN.xlsx')
+df_indicators = pd.read_csv('indmaarmunn.csv')
 
 #######################
 
@@ -58,30 +57,26 @@ with st.sidebar:
              ],)
 
     if type == "Themes":
-        options = df_indicators["Theme"].dropna().unique().tolist()
+        options = theme_options
     else:
-        options = file_options
+        options = indicator_options
 
     selected_indicator = st.selectbox("Select a Theme/an Indicator:", options)
 
-    year_columns = file_options[selected_indicator]["year_columns"]
+    year_columns = options[selected_indicator]["year_columns"]
     selected_year = st.selectbox("Select a year:", list(year_columns.keys()))
     
     selected_scheme_name = st.selectbox("Select a color scheme:", list(color_schemes.keys()))
     selected_scheme = color_schemes[selected_scheme_name]
 
-    if type == "Themes":
-        options = df_indicators["Thema"].dropna().unique().tolist()
-    else:
-        options = file_options
-    
 # Correctly define columns
 col = st.columns((2,1), gap='medium')
 
+
 #  map
 with col[0]:
-    indicator_path = file_options[selected_indicator]["path"]
-    title_base = file_options[selected_indicator]["title"]
+    indicator_path = options[selected_indicator]["path"]
+    title_base = options[selected_indicator]["title"]
 
     # Load the selected file
     indicator = gpd.read_file(indicator_path)
@@ -180,13 +175,13 @@ with col[1]:
         selected_year = str(selected_year)  # Convert selected year to string
 
         df_selectedindicator = df_indicators[
-            (df_indicators['Label'] == selected_indicator) &
+            (df_indicators['label'] == selected_indicator) &
             (df_indicators['jaar'] == selected_year)
         ]
 
         df_selectedindicator_sorted = df_selectedindicator.sort_values(by='waarde', ascending=False)
 
-        columns_to_include = ['meentenaam', 'waarde']
+        columns_to_include = ['statnaam', 'waarde']
 
         df_selectedindicator_sorted = df_selectedindicator_sorted[columns_to_include]
         with st.expander(f'*Municipalities ranked from high to low in {selected_indicator}*'):
@@ -197,11 +192,11 @@ with col[1]:
                 # Display the DataFrame using Streamlit
                 st.dataframe(
                     df_selectedindicator_sorted,
-                    column_order=("meentenaam", "waarde"),
+                    column_order=("statnaam", "waarde"),
                     hide_index=True,
                     width=None,
                     column_config={
-                        "meentenaam": st.column_config.TextColumn(
+                        "statnaam": st.column_config.TextColumn(
                             "Municipality",
                         ),
                         "waarde": st.column_config.TextColumn(
