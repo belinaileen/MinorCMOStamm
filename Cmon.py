@@ -199,12 +199,12 @@ with col0[1]:
     selected_year = str(selected_year)  # Convert selected year to string
 
     df_selectedindicator = df_indicators[
-        (df_indicators['Label'] == selected_indicator)&
+        (df_indicators['label'] == selected_indicator)&
         (df_indicators['jaar'] == selected_year)]
 
     df_selectedindicator_sorted = df_selectedindicator.sort_values(by='waarde', ascending=False)
     
-    columns_to_include = ['Gemeentenaam', 'waarde'] 
+    columns_to_include = ['statnaam', 'waarde'] 
     
     df_selectedindicator_sorted = df_selectedindicator_sorted[columns_to_include]
     with st.expander(f'**Gemeenten gerangschikt van hoog naar laag in {selected_indicator}**'):
@@ -215,12 +215,12 @@ with col0[1]:
             # Display the DataFrame using Streamlit
             st.dataframe(
             df_selectedindicator_sorted, 
-            column_order=("Gemeentenaam", "waarde"), 
+            column_order=("statnaam", "waarde"), 
             hide_index=True, 
             width=None, 
             column_config={
-                "Gemeentenaam": st.column_config.TextColumn(
-                    "Gemeentenaam",
+                "statnaam": st.column_config.TextColumn(
+                    "Statnaam",
                 ),
                 "waarde": st.column_config.TextColumn(
                     "Waarde",  # This will now display as plain numbers
