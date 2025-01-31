@@ -195,6 +195,8 @@ with col0[1]:
     wij door bewustwording te vergroten, het monitoren en uitvoeren van onderzoek en het 
     ontwikkelen van een visie en strategie voor beleid.
     ''')
+    st.markdown('''
+    Gemeenten gerangschikt van hoog naar laag alleen beschikbaar voor indicatoren, en niet voor thema's''')
 
     df_indicators['jaar'] = df_indicators['jaar'].astype(str)  # Convert to string
     selected_year = str(selected_year)  # Convert selected year to string
