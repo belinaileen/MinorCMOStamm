@@ -57,7 +57,7 @@ st.markdown("""
 
 #######################
 # Load data
-
+df_indicators = pd.read_csv('indmaarmunn.csv')
 #######################
 # Sidebar
 with st.sidebar:
