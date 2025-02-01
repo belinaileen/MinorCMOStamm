@@ -25,8 +25,8 @@ st.set_page_config(
 # Styling dashboard
 st.markdown("""
     <div style='text-align: left; padding: 10px;'>
-        <h1 style='color: #eb1d9c; font-size: 48px; font-weight: bold; margin-bottom: 0;'> cmo stamm.</h1>
-        <h2 style='color: black; font-size: 32px; font-weight: bold; margin-top: 0;'>Brede welvaart van het Nederland</h2>
+    <h1 style='color: #009ee3; font-size: 48px; font-weight: bold; margin-bottom: 0;'>cmo stamm.</h1>
+    <h2 style='color: #e5007d; font-size: 32px; font-weight: bold; margin-top: 0;'>Broad Prosperity in the Netherlands</h2>
     </div>
     """, unsafe_allow_html=True)
 
