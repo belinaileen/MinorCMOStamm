@@ -196,7 +196,9 @@ with col0[1]:
     ontwikkelen van een visie en strategie voor beleid.
     ''')
     st.markdown('''
-    Gemeenten gerangschikt van hoog naar laag alleen beschikbaar voor indicatoren, en niet voor thema's''')
+    Gemeenten gerangschikt van hoog naar laag alleen beschikbaar voor indicatoren, en niet voor thema's.
+    **Disclaimer:** Deze ranglijst is uitsluitend gebaseerd op numerieke waarden van hoog naar laag en geeft geen indicatie van de welvaart of superioriteit van een gemeente.
+    ''')
 
     df_indicators['jaar'] = df_indicators['jaar'].astype(str)  # Convert to string
     selected_year = str(selected_year)  # Convert selected year to string
